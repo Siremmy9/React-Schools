@@ -1,0 +1,22 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Admission {
+  id            Int      @id @default(autoincrement())
+  parentName    String
+  email         String
+  phone         String
+  childName     String
+  childAge      Int
+  classApplying String
+  contactMethod String
+  message       String?
+  status        String   @default("PENDING")
+  createdAt     DateTime @default(now())
+}
