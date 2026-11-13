@@ -20,3 +20,13 @@ model Admission {
   status        String   @default("PENDING")
   createdAt     DateTime @default(now())
 }
+
+model News {
+  id        Int      @id @default(autoincrement())
+  title     String
+  excerpt   String
+  image     String   @default("")
+  type      String   @default("NEWS")
+  date      String
+  createdAt DateTime @default(now())
+}
